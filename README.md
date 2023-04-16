@@ -57,6 +57,10 @@ sudo apt install pgadmin4
 ```
 
 ### Getting the Database Running
+Start by pulling the image:
+```
+docker pull commandshifthq/movies-db-postgres
+```
 
 Run the container by typing this command:
 ```
