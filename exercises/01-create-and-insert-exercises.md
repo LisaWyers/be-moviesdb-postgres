@@ -27,7 +27,7 @@
 
 Create the following table in your database:
 
-    ```
+```
     +--------------+---------------+------+--------------+---------------------------------+
     | Field        | Type          | Null | Key          | Extra Constraints               |
     +--------------+---------------+------+--------------+---------------------------------+
@@ -36,9 +36,10 @@ Create the following table in your database:
     | TITLE        | varchar(100)  | NO   |              | UNIQUE                          |
     | CONTENT      | varchar(255)  | NO   |              | Minimum CONTENT length 10 chars |
     +--------------+---------------+------+--------------+---------------------------------+
-    ```
+```
     
 
 1. Write a SQL statement to insert a record with your own values into the `ratings` table against each column.
 
 2. Write a SQL statement to insert 3 rows by using a single INSERT statement.
+
