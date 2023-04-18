@@ -28,14 +28,14 @@
 Create the following table in your database:
 
     ```
-    +--------------+---------------+------+--------------+---------+
-    | Field        | Type          | Null | Key          | Extra   |
-    +--------------+---------------+------+--------------+---------+
-    | RATING_ID    | serial        | NO   | PRIMARY KEY  |         |
-    | RATING_VALUE | varchar(40)   | NO   |              |         |
-    | TITLE        | varchar(2)    | NO   |              | UNIQUE  |
-    | CONTENT      | varchar(255)  | NO   |              |         |
-    +--------------+---------------+------+--------------+---------+
+    +--------------+---------------+------+--------------+--------------------------------+
+    | Field        | Type          | Null | Key          | Extra                          |
+    +--------------+---------------+------+--------------+--------------------------------+
+    | RATING_ID    | serial        | NO   | PRIMARY KEY  |                                |
+    | RATING_VALUE | integer       | NO   |              | RATING VALUE BETWEEN 0 and 10  |
+    | TITLE        | varchar(100)  | NO   |              | UNIQUE                         |
+    | CONTENT      | varchar(255)  | NO   |              |                                |
+    +--------------+---------------+------+--------------+--------------------------------+
     ```
     
 
