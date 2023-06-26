@@ -136,7 +136,7 @@ In the left hand side of the screen, in the sidebar, you will see the `movies` s
 Check that you are able to send queries to the database by right clicking on the `public` schema and selecting the `Query Tool`. Then in the newly opened pane, enter some thing like:
 
 ```
-SELECT * FROM movies;
+SELECT * FROM movie;
 ```
 
 Click the play button and confirm that the query returns employee information.
