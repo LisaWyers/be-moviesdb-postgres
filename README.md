@@ -139,7 +139,40 @@ Check that you are able to send queries to the database by right clicking on the
 SELECT * FROM movie;
 ```
 
-Click the play button and confirm that the query returns employee information.
+### Relation does not exist?
+If you are getting an error similar to this:
+
+```sql
+ERROR:  relation "movie" does not exist
+LINE 1: SELECT * FROM movie;
+                      ^
+SQL state: 42P01
+Character: 15
+
+```
+
+Then do not fret. It's all good and we are one step closer to querying the database. The reason the movie relation does not exist is because by default, the queries are run in the public schema, however, our tables are in the movies one. To solve this we can either change the default schema going forward or always be dilligent in specifying which schema we want to query.
+
+#### Option 1️⃣: Changing the default schema
+Our first and most straighforward option is to set the default schema for the current user to the movies schema. You can do this by running the following SQL statements:
+
+```sql
+SET search_path = movies, "$user", public;
+ALTER ROLE postgres SET search_path = movies, "$user", public; -- Persistent, for role
+```
+
+Now go ahead and run the SELECT statement from before. You should now be able to retrieve data.
+
+#### Option 2️⃣: Always specify the schema in your SQL statement
+How would we specify the schema when running a SQL statement? As follows:
+
+```sql
+SELECT * FROM movies.movie;
+```
+
+Please note: We are first specifying the schema, followed by a ., and finally the table we want to query i.e the schema is movies and movie is the table.
+
+Click the play button and confirm that the query returns movie information.
 
 Now on to the exercises!
 
