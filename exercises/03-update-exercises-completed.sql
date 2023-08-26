@@ -22,11 +22,16 @@ UPDATE production_company
 SET company_name = 'Paramount+'
 WHERE company_name = 'Paramount Pictures';
 
-UPDATE movie
-SET homepage = 'Paramount+ Streaming Service'
-WHERE company_name = 'Paramount+';
-
-UPDATE production_company
-SET homepage = 'https://www.paramountplus.com/gb/'
+SELECT movie_id
+FROM movie_company
 WHERE company_id = 4;
+
+SELECT mc1.company_id
+FROM movie_company AS mc1
+LEFT JOIN movie AS mc2
+ON mc2.movie_id = mc1.company_id;
+
+UPDATE movie
+SET homepage = 'https://www.paramountplus.com/gb/'
+WHERE company_id IN (SELECT movie_id FROM movie_company WHERE company_id = 4);
 
